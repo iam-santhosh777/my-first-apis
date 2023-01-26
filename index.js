@@ -132,3 +132,16 @@ app.put("/books/:bookId", async (request, response) => {
   await db.run(updateBookQuery);
   response.send("Book Updated Successfully");
 });
+
+// DELETE Book API
+
+app.delete("/books/:bookId", async (request, response) => {
+  const { bookId } = request.params;
+  const deleteBookQuery = `
+    DELETE FROM
+        book
+    WHERE
+        book_id = ${bookId};`;
+  await db.run(deleteBookQuery);
+  response.send("Book Deleted Successfully");
+});

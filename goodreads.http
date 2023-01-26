@@ -25,7 +25,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/books/43/
+PUT http://localhost:3000/books/40/
 Content-Type: application/json
 
 {
@@ -44,7 +44,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/books/41/
+DELETE http://localhost:3000/books/46/
 
 ###
 

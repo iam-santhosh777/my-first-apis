@@ -37,3 +37,18 @@ app.get("/books/", async (request, response) => {
   const booksArray = await db.all(getBooksQuery);
   response.send(booksArray);
 });
+
+//Get Book API
+
+app.get("/books/:bookId", async (request, response) => {
+  const { bookId } = request.params;
+  const getBookQuery = `
+    SELECT
+        *
+    FROM
+        book
+    WHERE
+        book_id = ${bookId};`;
+  const book = await db.get(getBookQuery);
+  response.send(book);
+});
